@@ -3,4 +3,4 @@ layout: page
 title: WSL
 ---
 
-- [Install](install)
+- [Install](/pages/wsl/install)

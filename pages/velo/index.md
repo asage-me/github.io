@@ -3,4 +3,4 @@ layout: page
 title: Velo
 ---
 
-- [Setup](setup)
+- [Setup](/pages/velo/setup)

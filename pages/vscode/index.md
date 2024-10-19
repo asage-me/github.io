@@ -3,6 +3,6 @@ layout: page
 title: VSCode
 ---
 
-- [Extensions](extensions)
-- [Initial Setup](initial-setup)
-- [Podman Rootless Rabbit Hole](podman-rootless-rabbit-hole)
+- [Extensions](/pages/vscode/extensions)
+- [Initial Setup](/pages/vscode/initial-setup)
+- [Podman Rootless Rabbit Hole](/pages/vscode/podman-rootless-rabbit-hole)
