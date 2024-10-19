@@ -3,4 +3,4 @@ layout: page
 title: Docker Desktop
 ---
 
-- [Install](install)
+- [Install](/pages/docker-desktop/install)

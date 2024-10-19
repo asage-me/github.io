@@ -22,4 +22,4 @@ Here are the [GitHub Docs](https://docs.github.com/en/pages/getting-started-with
       - `git config --global user.name "Your Name"`
     - Once those are set go ahead and do a Commit & Push again, following the steps above for the commit message (this is needed for every commit)
 10. Now that the repo is set up and you have something to serve, the page should load.  Go to your browser and load the URL for your page - (GitHub username).github.io  If you followed the steps above you should see a very basic single line "Hello world" in your browser
-11. Next, set up your custom domain if you have one [Set up DNS](set-up-dns)
+11. Next, set up your custom domain if you have one [Set up DNS](/pages/github/pages/set-up-dns)

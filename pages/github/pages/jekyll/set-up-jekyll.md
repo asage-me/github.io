@@ -6,7 +6,7 @@ title: Set Up Jekyll
 This guide will walk you through hosting a page on a custom domain for free through GitHub Pages  
 Click [here](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll) for GitHub docs
 
-1. You will need the [Jekyll Prerequisites](jekyll-prerequisites) for this guide
+1. You will need the [Jekyll Prerequisites](/pages/github/pages/jekyll/jekyll-prerequisites) for this guide
 2. I chose to go with the [Chripy theme](https://chirpy.cotes.page/) because it fits most of what I wanted in the template.  Dark mode and blog like were the 2 main things I was looking for.  [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/docs/installation/) was a very close second.  In my opinion, Chirpy is much more complete on the publishing site.  I really like how the author took the time to set up a preconfigured Dev Container and GitHub workflows.  Also, the docs for setup are very easy to follow
 3. From the [starter repo](https://github.com/cotes2020/chirpy-starter) choose Use this template, then Create a new repository
    - ![Create New Repo.png](/assets/img/github/pages/jekyll/create-new-repo.png)

@@ -11,5 +11,5 @@ title: Initial Setup
 5. Choose what settings you would like to sync, then click Sign in 
    - ![Settings to Sync](/assets/img/vscode/settings-to-sync.png)
 6. I use my GitHub account but you can also choose to use your Microsoft account.  Using GitHub automatically signs you in when doing remote git operations
-7. Set up useful [Extensions](extensions)
-8. [Podman Rootless Rabbit Hole](podman-rootless-rabbit-hole)
+7. Set up useful [Extensions](/pages/vscode/extensions)
+8. [Podman Rootless Rabbit Hole](/pages/vscode/podman-rootless-rabbit-hole)

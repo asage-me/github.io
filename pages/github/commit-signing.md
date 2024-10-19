@@ -11,7 +11,7 @@ Commit signing [GitHub Docs](https://github.com/microsoft/vscode/wiki/Commit-Sig
 {: .prompt-tip }
 
 1. Install [Gpg4win](https://gpg4win.org/) or [whatever version you need](https://gnupg.org/download/)
-2. Generate a GPG key pair or if you already have one, [Import it](import-gpg)
+2. Generate a GPG key pair or if you already have one, [Import it](/pages/github/import-gpg)
    - `gpg --full-generate-key`
    - Use the following config:
      - RSA and RSA
