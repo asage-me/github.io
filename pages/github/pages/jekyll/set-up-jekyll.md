@@ -82,7 +82,7 @@ Click [here](https://docs.github.com/en/pages/setting-up-a-github-pages-site-wit
      - You should see a new post on the home page, and you should see the post after clicking it
        - ![New Post](/assets/img/github/pages/jekyll/new-post.png)
        - ![View Post](/assets/img/github/pages/jekyll/view-post.png)
-     - Go back to the Source Control and stage the changes for `Gemfile`
+     - Go back to the Source Control and stage the changes for the file that was created for your post.  It will start with the date and ahve your post title
    - Set up the Pages settings for the repo
      - [Pages Settings](/pages/github/pages/pages-settings)
    - If you're not using Linux, run this command in your terminal in VSCode `bundle lock --add-platform x86_64-linux`
