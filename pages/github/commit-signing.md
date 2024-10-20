@@ -5,9 +5,9 @@ title: Commit Signing
 
 Commit signing [GitHub Docs](https://github.com/microsoft/vscode/wiki/Commit-Signing) are here
 
-> If you key is compromised or you change your email, follow these steps again to generate a new one.  If you just need to add a new email you should be able to do that, but I opted to just set up a new one when I did changed my email.  Here are the [docs from GitHub](https://docs.github.com/en/authentication/managing-commit-signature-verification/associating-an-email-with-your-gpg-key) on adding an email.
+> If you key is compromised or you change your email, follow these steps again to generate a new one.  If you just need to add a new email you should be able to do that, but I opted to just set up a new one when I changed my email.  Here are the [docs from GitHub](https://docs.github.com/en/authentication/managing-commit-signature-verification/associating-an-email-with-your-gpg-key) on adding an email.
 {: .prompt-tip }  
-> If you change your key you will have issues committing.  There seems to be a disconnect with the git on your computer and the git in the container once the Dev Container is set up.  The easiest way I found to fix this is to just delete all the containers, images, volumes, and builds in Docker Desktop and then clone the repo in a named volume again.  I'm sure there is a way to fix this but for as simple as this process is, I did not feel like investing the time to figure it out.
+> If you change your key you will have issues committing in the Dev Container.  There seems to be a disconnect with the git on your computer and the git in the container once the Dev Container is set up.  The easiest way I found to fix this is to just delete all the containers, images, volumes, and builds in Docker Desktop and then clone the repo in a named volume again.  I'm sure there is a way to fix this but for as simple as this process is, I did not feel like investing the time to figure it out.
 {: .prompt-tip }
 
 1. Install [Gpg4win](https://gpg4win.org/) or [whatever version you need](https://gnupg.org/download/)
@@ -19,7 +19,7 @@ Commit signing [GitHub Docs](https://github.com/microsoft/vscode/wiki/Commit-Sig
      - key does not expire
      - Real name: (your name)
      - Email address: 
-       - If your email is private, use the private version of your email (your github no-reply email)@users.noreply.github.com
+       - If your email is private, use the private version of your email (Your GitHub no-reply email)@users.noreply.github.com
          > This email address can be found [here](https://github.com/settings/emails)
          {: .prompt-tip }
        - If your email is not private, use your public email address
@@ -32,13 +32,13 @@ Commit signing [GitHub Docs](https://github.com/microsoft/vscode/wiki/Commit-Sig
 4. Export your public key
    - `gpg --armor --export (ID from above)`
 5. Add the output from above to your [GitHub GPG keys](https://github.com/settings/gpg/new)
-6. If you want to use this key on other devices, or back it up use the following command
-    >This creates a file that contains the unencrypted public and private keys, be careful with it
+6. If you want to use this key on other devices, or back it up, use the following command
+    >This creates a file that contains the unencrypted public and private keys, be careful with the exported file
     {: .prompt-tip }
   - `gpg --output backupkeys.pgp --armor --export-secret-keys --export-options export-backup (email@address.com)`
-7. Set git gpg program and config
+7. Configure git to use your key
    - `git config --global gpg.program "C:\Program Files (x86)\GnuPG\bin\gpg.exe"`
-     - Use whatever parth you installed gpg to.  The above path is the default for Windows, but Linux and Mac will obviously be different
+     - Use whatever path you installed gpg to.  The above path is the default for Windows, but Linux and Mac will obviously be different
    - `git config --global user.signingkey (ID from above)`
    - `git config --global commit.gpgsign true`
 8. Make sure the email you configured in git matched the email in the GPG key.  If the email is not the same the commit will not show as verified.
@@ -46,7 +46,7 @@ Commit signing [GitHub Docs](https://github.com/microsoft/vscode/wiki/Commit-Sig
      - `git config --global user.email`
    - Update email
      - `git config --global user.email "your@example.com"`
-9. If you are using Windows with Kleopatra you can set the passphrase timeout so you don't have to enter it on every commit
+9. If you are using Windows with Kleopatra you can set the passphrase timeout so you don't have to enter it on every commit.  This doesn't seem to work properly for me and about every 15 minutes I still have to enter my passphrase.  One of these days I will look in to this and update accordingly
    - Launch Kleopatra
    - Click Settings > Configure Kleopatra...
    - Navigate to GnuPG System > Private Keys

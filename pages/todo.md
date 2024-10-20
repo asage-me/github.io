@@ -12,3 +12,4 @@ title: ToDo
 - [x] Fix tabbing in /pages/github/pages/jekyll/set-up-jekyll.md
 - [ ] Add info for reopening dev container
 - [ ] Add Velo pages
+- [ ] Figure out why Kleopatra private key timeout doesn't work
