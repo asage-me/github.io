@@ -69,7 +69,7 @@ Click [here](https://docs.github.com/en/pages/setting-up-a-github-pages-site-wit
      - Click the + on the line for `_config.yml` to stage the changes, then you can close the editor for `_config.yml`.  Staging tells git we made a change to the file and want to commit it.  If you don't stage anything VSCode is smart enough to ask you if you want to stage and commit everything at once
      - Open the file `Gemfile` and add this line to the end of the file `gem 'jekyll-compose', group: [:jekyll_plugins]` to install [Jekyll-Compose](https://github.com/jekyll/jekyll-compose).  This Jekyll plugin will be used to create templates for new posts
        - ![Gemfile](/assets/img/github/pages/jekyll/gemfile.png)
-       - After you save the file, open a normal terminal and type in bundle to install it
+       - After you save the file, open a normal terminal and type in `bundle install` to install it
        - ![Bundle Install](/assets/img/github/pages/jekyll/bundle-install.png)
      - Go back to the Source Control and stage the changes for `Gemfile`
      - Open the terminal again and enter the following command to generate a new post `bundle exec jekyll post "My First Post" --timestamp-format "%Y-%m-%d %H:%M:%S %z"`
