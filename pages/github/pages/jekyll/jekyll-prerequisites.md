@@ -10,4 +10,4 @@ Some of these you may have already done from the post page.  This is a complete 
 3. [Install VSCode](/pages/vscode/initial-setup)
 4. [Install git](/pages/git/install)
 5. [Install WSL](/pages/wsl/install)
-6. [Install Docker Desktop](/pages/docker-desktop/install.md)
+6. [Install Docker Desktop](/pages/docker-desktop/install)

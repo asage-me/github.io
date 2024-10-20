@@ -32,6 +32,8 @@ Click [here](https://docs.github.com/en/pages/setting-up-a-github-pages-site-wit
      - ![Reopen in Container](/assets/img/github/pages/jekyll/reopen-in-container.png)
         > Any changes you make in the Dev Container that are not pushed to the remote repo will ONLY be stored in your docker volume and not synced to any other device.  This means that if you delete the volume, those changes are gone.  It is a good idea to periodically open the folder you created above with VSCode and sync it to your computer so you have a local backup just in case something happens
         {: .prompt-danger }
+        > To reopen the repo in the dev container later, open the local directory you cloned to, then click Reopen in Container when you get the popup above.  You will need to Clone in Volume first before you can do this
+        {: .prompt-tip }
    - You will get a security pop up.  As long as you're not using Vlad's template you should be ok
      - ![Trust Dev Container Authors](/assets/img/github/pages/jekyll/trust-dev-container-authors.png)
    - You should see the page refresh.  In the top left the you should see an empty explorer and in the bottom right it will tell you it is connecting to the dev container
