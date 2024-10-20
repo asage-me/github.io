@@ -30,16 +30,16 @@ Click [here](https://docs.github.com/en/pages/setting-up-a-github-pages-site-wit
    - It will ask you if you trust the authors, I hope you do
    - You should see a pop up in the bottom right telling you VSCode detected a Dev Container config file and it will ask you if you want to use it.  Click on Clone in Volume
      - ![Reopen in Container](/assets/img/github/pages/jekyll/reopen-in-container.png)
-        > Any changes you make in the Dev Container that are not pushed to the remote repo will ONLY be stored in your docker volume and not synced to any other device.  This means that if you delete the volume, those changes are gone.  It is a good idea to periodically open the folder you created above with VSCode and sync it to your computer so you have a local backup just in case something happens
+        > I'm not sure how I managed to do this, but at one point I lost a bunch of changes I made.  It seemed like the changes were only stored in the docker container volume and not in the cloned directory on my PC.  When I deleted all the docker containers and volumes, all the changes went with it.  I would recommend periodically opening the folder you created above with VSCode and sync it to your computer so you have a local backup just in case something happens, and when you are done with a change always commit it and push to GitHub.  After this happened I did some tests and it seems like the directory I cloned to does in fact receive all the changes I make in the Dev Container so I must have broke something somewhere along the line
         {: .prompt-danger }
-        > To reopen the repo in the dev container later, open the local directory you cloned to, then click Reopen in Container when you get the popup above.  You will need to Clone in Volume first before you can do this
+        > To reopen the repo in the Dev Container later, in VSCode open the local directory you cloned to, then click Reopen in Container when you get the popup above.  You will need to Clone in Volume first before you can do this
         {: .prompt-tip }
    - You will get a security pop up.  As long as you're not using Vlad's template you should be ok
      - ![Trust Dev Container Authors](/assets/img/github/pages/jekyll/trust-dev-container-authors.png)
-   - You should see the page refresh.  In the top left the you should see an empty explorer and in the bottom right it will tell you it is connecting to the dev container
+   - You should see VSCode refresh.  In the top left the you should see an empty explorer and in the bottom right it will tell you it is connecting to the dev container
      - ![Explorer](/assets/img/github/pages/jekyll/explorer.png)
      - ![Connecting to Dev Container](/assets/img/github/pages/jekyll/connecting-to-dev-container.png)
-   - After a little bit you should see all the files from your repo show up in the explorer and the Terminal will open to show you the Docker build status.  Wait for it to get through all the steps and it will say `Done. Press any key to close the terminal.`  You can press a key to close if you want, we will reopen the terminal later
+   - If you click on `Connecting to Dev Container` you can see the current Docker build process.  After a little bit you should see all the files from your repo show up in the explorer and the Terminal will open to show you the Docker build status.  Wait for it to get through all the steps and it will say `Done. Press any key to close the terminal.`  You can press a key to close if you want, we will reopen the terminal later
      - ![Terminal Install Output](/assets/img/github/pages/jekyll/terminal-install-output.png)
    - At this point everything you need to start making changes to your site is ready.  [The docs for config](https://chirpy.cotes.page/posts/getting-started/#configuration) leave a bit to be desired, but fortunately the `_config.yml` is straight forward.  Here are the main points to hit:
      - `timezone: Your/Time_Zone`
@@ -59,32 +59,32 @@ Click [here](https://docs.github.com/en/pages/setting-up-a-github-pages-site-wit
          - `- https://github.com/GitHub.user`
      - `theme_mode: dark # [light | dark]`
      - !!! Project for later, set up Site Verification Settings, Web Analytics Settings, CDN, and Comments !!!
-   - Save the file, then build the site to preview
-     - After you save you should see an M on `_config.yml`.  This means the file has been modified locally but has not been committed.  We will want to test these changes before we do that, so click Terminal and then `Run Build Task...` or press `Ctrl+Shift+B`
-       - ![Open New Terminal](/assets/img/github/pages/jekyll/open-new-terminal.png)
-     - You will see the Terminal open up again and when it's done building you'll get a popup to Open in Browser.  Click the button to see what your changes did to your page
-       - ![Terminal Window](/assets/img/github/pages/jekyll/terminal-window.png)
-     - Once you are happy with your changes, click the Source Control button on the left, or press `Ctrl+Shift+G`
-       - ![Source Button](/assets/img/github/pages/jekyll/source-button.png)
-     - Make sure the only files you changed are the ones listed.  If there is something other than `_config.yml` either revert it or modify the commit message later in the guide
-       - ![Changed Files](/assets/img/github/pages/jekyll/changed-files.png)
-     - Click the + on the line for `_config.yml` to stage the changes, then you can close the editor for `_config.yml`.  Staging tells git we made a change to the file and want to commit it.  If you don't stage anything VSCode is smart enough to ask you if you want to stage and commit everything at once
-     - Open the file `Gemfile` and add this line to the end of the file `gem 'jekyll-compose', group: [:jekyll_plugins]` to install [Jekyll-Compose](https://github.com/jekyll/jekyll-compose).  This Jekyll plugin will be used to create templates for new posts
-       - ![Gemfile](/assets/img/github/pages/jekyll/gemfile.png)
-       - After you save the file, open a normal terminal and type in `bundle install` to install it
-       - ![Bundle Install](/assets/img/github/pages/jekyll/bundle-install.png)
-     - Go back to the Source Control and stage the changes for `Gemfile`
-     - Open the terminal again and enter the following command to generate a new post `bundle exec jekyll post "My First Post" --timestamp-format "%Y-%m-%d %H:%M:%S %z"`
-       - ![Jekyll Compose New Post](/assets/img/github/pages/jekyll/jekyll-compose-new-post.png)
-     - Open the new post and add some text
-       - ![Edit Post](/assets/img/github/pages/jekyll/edit-post.png)
-     - Run the build task again and refresh your browser page to test the change.  If you still have one running from before it should automatically detect the changes and rebuild.  If not, just click the trash can icon to stop the container, then run the build task again
-       - ![Stop Jekyll Server Container](/assets/img/github/pages/jekyll/stop-jekyll-server-container.png)
-       - The line above this is the terminal for the container.  You can close and reopen terminals as you need them as well, but it's pretty rare to need the terminal
-     - You should see a new post on the home page, and you should see the post after clicking it
-       - ![New Post](/assets/img/github/pages/jekyll/new-post.png)
-       - ![View Post](/assets/img/github/pages/jekyll/view-post.png)
-     - Go back to the Source Control and stage the changes for the file that was created for your post.  It will start with the date and have your post title
+   - Save the file
+   - After you save you should see an M on `_config.yml`.  This means the file has been modified locally but has not been committed.  We will want to test these changes before we do that, so click Terminal and then `Run Build Task...` or press `Ctrl+Shift+B`
+     - ![Open New Terminal](/assets/img/github/pages/jekyll/open-new-terminal.png)
+   - You will see the Terminal open up again and when it's done building you'll get a popup to Open in Browser.  Click the button to see what your changes did to your page
+     - ![Terminal Window](/assets/img/github/pages/jekyll/terminal-window.png)
+   - Once you are happy with your changes, click the Source Control button on the left, or press `Ctrl+Shift+G`
+     - ![Source Button](/assets/img/github/pages/jekyll/source-button.png)
+   - Make sure the only files you changed are the ones listed.  If there is something other than `_config.yml` either revert it or modify the commit message later in the guide
+     - ![Changed Files](/assets/img/github/pages/jekyll/changed-files.png)
+   - Click the + on the line for `_config.yml` to stage the changes, then you can close the editor for `_config.yml`.  Staging tells git we made a change to the file and want to commit it.  If you don't stage anything, VSCode is smart enough to ask you if you want to stage and commit everything at once
+   - Open the file `Gemfile` and add this line to the end of the file `gem 'jekyll-compose', group: [:jekyll_plugins]` to install [Jekyll-Compose](https://github.com/jekyll/jekyll-compose).  This Jekyll plugin will be used to create templates for new posts, pages, drafts, etc
+     - ![Gemfile](/assets/img/github/pages/jekyll/gemfile.png)
+     - After you save the file, open a normal terminal with ``Ctrl+Shift+` `` and type in `bundle install` to install it
+     - ![Bundle Install](/assets/img/github/pages/jekyll/bundle-install.png)
+   - Go back to the Source Control and stage the changes for `Gemfile`
+   - Open the terminal again and enter the following command to generate a new post `bundle exec jekyll post "My First Post" --timestamp-format "%Y-%m-%d %H:%M:%S %z"`
+     - ![Jekyll Compose New Post](/assets/img/github/pages/jekyll/jekyll-compose-new-post.png)
+   - Open the new post and add some text
+     - ![Edit Post](/assets/img/github/pages/jekyll/edit-post.png)
+   - Run the build task again and refresh your browser page to test the change.  If you still have one running from before it should automatically detect the changes and rebuild.  If not, just click the trash can icon to stop the container, then run the build task again
+     - ![Stop Jekyll Server Container](/assets/img/github/pages/jekyll/stop-jekyll-server-container.png)
+     - The line above `Run Jekyll Server` is the terminal for the container.  You can close and reopen terminals as you need them as well, but it's pretty rare to need the terminal
+   - You should see a new post on the home page, and you should see the post after clicking it
+     - ![New Post](/assets/img/github/pages/jekyll/new-post.png)
+     - ![View Post](/assets/img/github/pages/jekyll/view-post.png)
+   - Go back to the Source Control and stage the changes for the file that was created for your post.  It will start with the date and have your post title
    - Set up the Pages settings for the repo
      - [Pages Settings](/pages/github/pages/pages-settings)
    - If you're not using Linux, run this command in your terminal in VSCode `bundle lock --add-platform x86_64-linux`
@@ -97,9 +97,9 @@ Click [here](https://docs.github.com/en/pages/setting-up-a-github-pages-site-wit
       {: .prompt-tip }
    - Enter a descriptive message for the commit, for this simple commit `Set up config and publish first post` will be good.
    - Click the Commit button and enter your GPG key - you should have [Commit Signing](/pages/github/commit-signing) set up
-   - After the commit is complete, sync changes to the remote repo (GitHub)
+   - After the commit is complete, sync changes to the remote repo (GitHub).  You don't need to provide a Message here, it will use your commit message from before
      - ![Sync Changes](/assets/img/github/pages/jekyll/sync-changes.png)
-   - Back on the GitHub repo, you should see some files now have a new commit message, and a yellow dot next to the latest commit message at the top.  This dot means GitHub is building the changes.  If you wait a little while and click it, you will see the status has changes to success and on a page refresh the dot will turn in to a green check mark
+   - Back on the GitHub repo, you should see some files now have a new commit message, and a yellow dot next to the latest commit message at the top.  This dot means GitHub is building the changes.  If you wait a little while and click it, you will see the status changes to Success or Failure and on a page refresh the dot will turn in to a green check mark or red x
      - ![View Commit On GitHub](/assets/img/github/pages/jekyll/view-commit-on-github.png)
      - ![Build Checks Passed](/assets/img/github/pages/jekyll/build-checks-passed.png)
    - You can also see build status by going to Actions
