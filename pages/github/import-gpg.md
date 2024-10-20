@@ -3,7 +3,7 @@ layout: page
 title: Import GPG
 ---
 
-> If you change your key you will have issues committing.  There seems to be a disconnect with the local git and the remote git once the Dev Container is set up.  The easiest way I found to fix this is to just delete all the containers, images, volumes, and builds in Docker Desktop and then clone the repo in a named volume again.  I'm sure there is a way to fix this but for as simple as this process is, I did not feel like investing the time to figure it out.
+> If you change your key you will have issues committing.  There seems to be a disconnect with the git on your computer and the git in the container once the Dev Container is set up.  The easiest way I found to fix this is to just delete all the containers, images, volumes, and builds in Docker Desktop and then clone the repo in a named volume again.  I'm sure there is a way to fix this but for as simple as this process is, I did not feel like investing the time to figure it out.
 {: .prompt-tip }
 
 1. Install [Gpg4win](https://gpg4win.org) or [whatever version you need](https://gnupg.org/download)

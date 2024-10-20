@@ -7,7 +7,7 @@ Commit signing [GitHub Docs](https://github.com/microsoft/vscode/wiki/Commit-Sig
 
 > If you key is compromised or you change your email, follow these steps again to generate a new one.  If you just need to add a new email you should be able to do that, but I opted to just set up a new one when I did changed my email.  Here are the [docs from GitHub](https://docs.github.com/en/authentication/managing-commit-signature-verification/associating-an-email-with-your-gpg-key) on adding an email.
 {: .prompt-tip }  
-> If you change your key you will have issues committing.  There seems to be a disconnect with the local git and the remote git once the Dev Container is set up.  The easiest way I found to fix this is to just delete all the containers, images, volumes, and builds in Docker Desktop and then clone the repo in a named volume again.  I'm sure there is a way to fix this but for as simple as this process is, I did not feel like investing the time to figure it out.
+> If you change your key you will have issues committing.  There seems to be a disconnect with the git on your computer and the git in the container once the Dev Container is set up.  The easiest way I found to fix this is to just delete all the containers, images, volumes, and builds in Docker Desktop and then clone the repo in a named volume again.  I'm sure there is a way to fix this but for as simple as this process is, I did not feel like investing the time to figure it out.
 {: .prompt-tip }
 
 1. Install [Gpg4win](https://gpg4win.org/) or [whatever version you need](https://gnupg.org/download/)
