@@ -27,12 +27,12 @@ This guide is a compilation of various posts in [this thread](https://forums.ser
 9. The key to a successful DiagOS install to the eMMC is booting the DiagOS Installer USB as UEFI.  If it still fails, some people suggest [Finnix](https://www.finnix.org/), a live Linux distro, to delete all partitions on the eMMC using `sfdisk --delete /dev/mmcblk0` and any other device that starts with `/dev/mmcblk0`
 10. Insert the DiagOS installation USB disk you made in one of the 2 side USB A ports and boot from it
     - ![Side USB A Port](/assets/img/velo/side-usb-port.jpg)
+      > You will likely have to hit `Del` on boot to go in to the BIOS settings, go to the Save & Exit tab, and specifically boot from the UEFI boot option for your USB disk.  It will try to boot in MBR mode by default and you will get a warning that the disk is not set up for this
+      > ![Boot USB UEFI](/assets/img/velo/boot-usb-uefi.png)
+      {: .prompt-tip }
 11. After the DiagOS installer boots, select option 3 to install to eMMC.  This will take a minute or two and the device with automatically reboot when it's done.  When you see the memory test running, unplug the USB disk so it boots from the eMMC, or just go to the BIOS and select the eMMC as the boot option.  A successful install should look like this [DiagOS Installer Output](/pages/velo/diagos-installer-output)
     > Until you get the BIOS upgraded, any time you have a terminal prompt the first thing you should do is paste in `i2cset -y 1 0x22 0 0 b` so the watchdog doesn't reboot the device every 5 minutes.  After the BIOS is upgraded you don't need to do this any more
     {: .prompt-warning }
-    > You will likely have to hit `Del` on boot to go in to the BIOS settings, go to the Save & Exit tab, and specifically boot from the UEFI boot option for your USB disk.  It will try to boot in MBR mode by default and you will get a warning that the disk is not set up for this
-    > ![Boot USB UEFI](/assets/img/velo/boot-usb-uefi.png)
-    {: .prompt-tip }
     - If the install still fails, create a USB boot disk for Finnix (above) and edit boot/grub/grub.cfg.  Add the following to the end of line 5 `console=tty0 console=ttyS0,115200n8`.  It should look like this
       - ![Grub Config](/assets/img/velo/grub-config.png)
     - Use the `sfdisk` commands above to delete all the partitions and try the install again
