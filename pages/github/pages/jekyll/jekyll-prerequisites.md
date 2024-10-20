@@ -17,4 +17,3 @@ Some of these you may have already done from the post page.  This is a complete 
 5. [WSL](/pages/wsl/install)
 6. [Docker Desktop](https://www.docker.com/products/docker-desktop/)
    - Default install is fine
-
