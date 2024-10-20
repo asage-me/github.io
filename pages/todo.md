@@ -9,4 +9,6 @@ title: ToDo
   - [ ] Web Analytics Settings
   - [ ] CDN
   - [ ] Comments
-- [ ] Fix tabbing in /pages/github/pages/jekyll/set-up-jekyll.md
+- [x] Fix tabbing in /pages/github/pages/jekyll/set-up-jekyll.md
+- [ ] Add info for reopening dev container
+- [ ] Add Velo pages
