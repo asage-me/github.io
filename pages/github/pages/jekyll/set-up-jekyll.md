@@ -30,8 +30,8 @@ Click [here](https://docs.github.com/en/pages/setting-up-a-github-pages-site-wit
    - It will ask you if you trust the authors, I hope you do
    - You should see a pop up in the bottom right telling you VSCode detected a Dev Container config file and it will ask you if you want to use it.  Click on Clone in Volume
      - ![Reopen in Container](/assets/img/github/pages/jekyll/reopen-in-container.png)
-      > Any changes you make in the Dev Container that are not pushed to the remote repo will ONLY be stored in your docker volume and not synced to any other device.  This means that if you delete the volume, those changes are gone.  It is a good idea to periodically open the folder you created above with VSCode and clone it to your computer so you have a local backup just in case something happens
-      {: .prompt-danger }
+        > Any changes you make in the Dev Container that are not pushed to the remote repo will ONLY be stored in your docker volume and not synced to any other device.  This means that if you delete the volume, those changes are gone.  It is a good idea to periodically open the folder you created above with VSCode and clone it to your computer so you have a local backup just in case something happens
+        {: .prompt-danger }
    - You will get a security pop up.  As long as you're not using Vlad's template you should be ok
      - ![Trust Dev Container Authors](/assets/img/github/pages/jekyll/trust-dev-container-authors.png)
    - You should see the page refresh.  In the top left the you should see an empty explorer and in the bottom right it will tell you it is connecting to the dev container
@@ -82,19 +82,16 @@ Click [here](https://docs.github.com/en/pages/setting-up-a-github-pages-site-wit
        - ![New Post](/assets/img/github/pages/jekyll/new-post.png)
        - ![View Post](/assets/img/github/pages/jekyll/view-post.png)
      - Go back to the Source Control and stage the changes for `Gemfile`
-   - Finish setting up the repo:
-     - Open the Pages option in settings on the repo https://github.com/(username)/github.io/settings/pages
-    - Set the Build and deployment Source to GitHub Actions
-     - Under Custom domain, enter your custom domain
-       - Once the DNS check is complete, you can refresh the page and then check the box for Enforce HTTPS
+   - Set up the Pages settings for the repo
+     - [Pages Settings](/pages/github/pages/pages-settings)
    - If you're not using Linux, run this command in your terminal in VSCode `bundle lock --add-platform x86_64-linux`
    - If you are happy with your changes, go ahead and commit them and push to the repo:
-    >Pay attention to the bottom right.  If the Prettier icon is red you likely have a formatting error  
-    >![Prettier Error Icon](/assets/img/github/pages/jekyll/prettier-error-icon.png)  
-    >Click the red icon to show you where the issue is.  Scroll up until you see the error  
-    >![Prettier Error Message](/assets/img/github/pages/jekyll/prettier-error-message.png)  
-    >When you fix the error, resave and the red icon should go away.  Prettier checks are triggered on saves
-    {: .prompt-tip }
+      >Pay attention to the bottom right.  If the Prettier icon is red you likely have a formatting error  
+      >![Prettier Error Icon](/assets/img/github/pages/jekyll/prettier-error-icon.png)  
+      >Click the red icon to show you where the issue is.  Scroll up until you see the error  
+      >![Prettier Error Message](/assets/img/github/pages/jekyll/prettier-error-message.png)  
+      >When you fix the error, resave and the red icon should go away.  Prettier checks are triggered on saves
+      {: .prompt-tip }
    - Enter a descriptive message for the commit, for this simple commit `Set up config and publish first post` will be good.
    - Click the Commit button and enter your GPG key - you should have [Commit Signing](/pages/github/commit-signing) set up
    - After the commit is complete, sync changes to the remote repo (GitHub)
@@ -104,6 +101,10 @@ Click [here](https://docs.github.com/en/pages/setting-up-a-github-pages-site-wit
      - ![Build Checks Passed](/assets/img/github/pages/jekyll/build-checks-passed.png)
    - You can also see build status by going to Actions
      - ![Build Status](/assets/img/github/pages/jekyll/build-status.png)
+     - You can see your build action errors by clicking on the commit name, then the error in the Annotations.  The most common error will be links that are broken.  The initial commit always fails because the config is not yet correct
+       - ![Actions Error Commit Name](/assets/img/github/pages/jekyll/actions-error-commit-name.png)
+       - ![Actions Error Annotations](/assets/img/github/pages/jekyll/actions-error-annotations.png)
+       - ![Actions Errors](/assets/img/github/pages/jekyll/actions-errors.png)
    - Once you have a successful build you should see your changes live on your site
      - ![Live Site](/assets/img/github/pages/jekyll/live-site.png)
 6. Add a plugin to make all external links open in a new tab
