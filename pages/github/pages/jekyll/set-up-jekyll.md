@@ -40,20 +40,21 @@ Click [here](https://docs.github.com/en/pages/setting-up-a-github-pages-site-wit
    - After a little bit you should see all the files from your repo show up in the explorer and the Terminal will open to show you the Docker build status.  Wait for it to get through all the steps and it will say `Done. Press any key to close the terminal.`  You can press a key to close if you want, we will reopen the terminal later
      - ![Terminal Install Output](/assets/img/github/pages/jekyll/terminal-install-output.png)
    - At this point everything you need to start making changes to your site is ready.  [The docs for config](https://chirpy.cotes.page/posts/getting-started/#configuration) leave a bit to be desired, but fortunately the `_config.yml` is straight forward.  Here are the main points to hit:
-     - `timezone: America/New_York`
-     - `title: ASage.dev`
-     - `tagline: A blog for semi-useful stuff`
-     - The line under description: `Sometimes I document my interesting encounters with Technology.`
-     - `url: "https://www.asage.dev"`
+     - `timezone: Your/Time_Zone`
+       - Ex. `timezone: America/New_York` from [https://kevinnovak.github.io/Time-Zone-Picker](https://kevinnovak.github.io/Time-Zone-Picker)
+     - `title: Page Title`
+     - `tagline: Something fun`
+     - The line under description: `Something else fun`
+     - `url: "https://www.your.domain"`
      - Under github:  
-       - `username: asagedev # change to your GitHub username`
+       - `username: GitHub.user # change to your GitHub username`
      - Comment the Twitter account with #
      - Under Social
-       - `name: Adam Sage`
-       - `email: public@asage.dev # change to your email address`
+       - `name: Your Name`
+       - `email: email@address.com # change to your email address`
        - Links
          - Comment Twitter account line
-         - `- https://github.com/asagedev`
+         - `- https://github.com/GitHub.user`
      - `theme_mode: dark # [light | dark]`
      - !!! Project for later, set up Site Verification Settings, Web Analytics Settings, CDN, and Comments !!!
    - Save the file, then build the site to preview
