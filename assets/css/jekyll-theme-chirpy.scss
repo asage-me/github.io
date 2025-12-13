@@ -1,0 +1,51 @@
+---
+---
+
+@use 'main
+  {%- if jekyll.environment == ' production
+  ' -%}
+    .bundle
+  {%- endif -%}
+';
+
+/* Custom CSS to override avatar circle */
+#sidebar #avatar {
+  border-radius: 10px !important; /* Change from circle (50%) to rounded rectangle */
+  box-shadow: none; /* Remove the circular border shadow if desired */
+  overflow: hidden !important; /* Keep content within bounds */
+  width: calc(100% + 1.25rem) !important; /* Extend to full sidebar width */
+  height: auto !important; /* Allow flexible height for rectangular logo */
+  margin-left: -1.25rem !important; /* Offset the left padding to align with menu */
+}
+
+#sidebar #avatar img {
+  border-radius: 10px; /* Ensure the image inside also has rounded corners */
+  transform: none !important; /* Disable the zoom effect on hover */
+  object-fit: contain !important; /* Fit entire logo without cropping */
+  width: 100%; /* Use full container width */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Reduce spacing above the logo */
+#sidebar .profile-wrapper {
+  margin-top: 1.5rem !important; /* Reduced from 2.5rem/3rem */
+}
+
+@media all and (min-width: 850px) {
+  #sidebar .profile-wrapper {
+    margin-top: 1.5rem !important; /* Reduced from 3rem */
+  }
+}
+
+@media all and (min-width: 1650px) {
+  #sidebar .profile-wrapper {
+    margin-top: 1.5rem !important; /* Reduced from 3.5rem */
+  }
+
+  #sidebar #avatar {
+    width: calc(
+      100% + 2.25rem
+    ) !important; /* Account for larger padding on wide screens */
+    margin-left: -2.25rem !important;
+  }
+}
