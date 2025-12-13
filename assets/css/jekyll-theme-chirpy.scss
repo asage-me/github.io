@@ -1,11 +1,11 @@
 ---
 ---
 
-@use 'main
-  {%- if jekyll.environment == ' production
+@import 'main
+{%- if jekyll.environment == ' production
   ' -%}
-    .bundle
-  {%- endif -%}
+  .bundle
+{%- endif -%}
 ';
 
 /* Custom CSS to override avatar circle */
