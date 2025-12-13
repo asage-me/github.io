@@ -3,4 +3,4 @@ layout: page
 title: git
 ---
 
-- [Install](/pages/docker-desktop/install)
+- [Install](/pages/git/install)
