@@ -41,6 +41,8 @@ The Velo 640 seemed like an excellent choice for the mitmrouter since it already
     ```
    - Use `sudo systemctl daemon-reload` to load the new service, then `sudo systemctl enable mitmrouter.service` to enable it on boot, and finally `sudo systemctl start mitmrouter.service` to start it
    - Since we are running this service as root you will notice the modified script below does not include sudo
+      > You will notice when stopping the service the logs show an error `Failed to remove interface wlp4s0 from bridge br0: Invalid argument` - this is a benign error and can be ignored.  If you read a few lines up you will notice that the interface was brought down which by default removes it from the bridge so it cannot be removed later.  There seem to be some workarounds but I spent a couple hours on it and it simply wasn't worth the effort to fix an error that doesn't matter.
+      {: .prompt-tip }
 6. There are more things to set up to properly intercept traffic.  This post will solely focus on installing Ubuntu Server minimum on the Velo 640, getting the pre-reqs set up, and setting up a service for the script.  As is, you should be able to connect to the new SSID and browse the web like you would from any standard access point.  Later we will look at ways to set up a packet capture and send port 443 traffic to a proxy.  Using the packet capture we can see all plain text transmissions (non https/tls traffic) and with the proxy we will be able to insert our own certificate to decrypt the traffic and see all that data.  Note that unless you have a way of adding the root cert for the proxy to your target device, your traffic will likely not work unless there is a very insecure setting of not validating certificates.
 
 Modified script:
