@@ -19,7 +19,7 @@ This guide is a compilation of various posts in [this thread](https://forums.ser
    - ![Putty Session Settings](/assets/img/velo/putty-session-settings.png)
    - ![Putty Serial Settings](/assets/img/velo/putty-serial-settings.png)
 6. Burn [diagos-recovery-x86_64-dellemc_vep1400_c3538-r0.3.43.3.81-27.zip](https://www.dell.com/support/home/en-us/drivers/driversdetails?driverid=dmg5j) to a USB disk with [Rufus](https://rufus.ie/en/)
-    >MAKE SURE TO SET TARGET SYSTEM TO UEFI OR INSTALL TO eMMC WILL FAIL!!!  I wasted hours on this.  I verified without a doubt this is the cause by setting up 2 other Velo 640's using the same steps
+    > MAKE SURE TO SET TARGET SYSTEM TO UEFI OR INSTALL TO eMMC WILL FAIL!!!  I wasted hours on this.  I verified without a doubt this is the cause by setting up 2 other Velo 640's using the same steps
     {: .prompt-warning }
    - ![Rufus DiagOS Settings](/assets/img/velo/rufus-diagos-settings.png)
 7. Download the BIOS image [VEP1400_UFW2.5_External.zip](https://www.dell.com/support/home/en-us/drivers/driversdetails?driverid=dftr4&oscode=nf901&productcode=dell-emc-networking-vep1445-vep1485) (expand Available formats) and put the extracted directory on the root of your DiagOS USB disk
